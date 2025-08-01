@@ -4,7 +4,7 @@ const app = express ()
 const PORT = 3000
 
 app.get('/', (req,res)=>{
-    res.send('Hellow World')
+    res.send('Bienvenido a la página de Osito Style')
 })
 
 app.listen(PORT)
