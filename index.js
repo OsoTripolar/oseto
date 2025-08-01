@@ -9,7 +9,8 @@ const PORT = 3000
 const app = express ()
 const pool = new pg.Pool({
     connectionString : process.env.DATABASE_URL,
-    ssl: true
+    //PARA TRABAJAR DE MANERA LOCAL: REQUIERE SSL EN TRUE
+    // ssl: true
 })
 
 app.get('/ping', async (req,res)=>{
