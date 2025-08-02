@@ -3,6 +3,7 @@ import pool from './models/pool.js'; //conexión a db
 import path from 'path';
 import {fileURLToPath} from 'url'; 
 import {config} from 'dotenv'; //para trabajar con variables de entorno
+import {cors} from 'cors'; //para permitirme el acceso desde produccioón
 
 import { subInicio, subVentas, subAbout } from './models/dataTest.js'; //mensajes de testeo de x ruta
 
@@ -19,7 +20,10 @@ const indexDir = __dirname
 console.log('Directorio de index:', indexDir);
 
 const PORT =  process.env.PORT || 3000 // puerto por defecto
+
 const app = express ()
+
+app.use(cors());
 
 config(); //nos permite trabajar con variables de entorno
 

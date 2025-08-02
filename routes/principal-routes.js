@@ -16,6 +16,10 @@ router.get('/styles.css', (req,res)=>{
     res.sendFile(path.join(indexDirGlobal, dirMiddle, 'styles.css'))
 })
 
+router.get('/wake.js', (req,res)=>{
+    res.sendFile(path.join(indexDirGlobal, dirMiddle, 'wake.js'))
+})
+
 router.get('/futuras-tareas', (req,res)=>{
     res.sendFile(path.join(indexDirGlobal, dirMiddle, 'futuras-tareas.html'))
 })
