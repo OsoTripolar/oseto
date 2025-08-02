@@ -1,56 +1,52 @@
 import express from 'express';
+import pool from './models/pool.js'; //conexión a db
+import path from 'path';
+import {fileURLToPath} from 'url';
 import {config} from 'dotenv';
-import pg from 'pg';
 
+import { subInicio, subVentas, subAbout } from './models/dataTest.js'; //mensajes de testeo de x ruta
 
+import userRouter from './routes/principal-routes.js';
+import secundarioRouter from './routes/secundario-routes.js';
 
+/////// INICIO ---------------------------------------
 
-/////// INICIO
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename); // Esto luego lo exportaremos como indexDir
+
+const PORT =  process.env.PORT || 3000 // puerto por defecto
+const app = express ()
 
 config(); //nos permite trabajar con variables de entorno
 
-const PORT = 3000 // puerto por defecto
-const app = express ()
 
 
+/////// RUTAS ---------------------------------------
 
+app.use(('/'), userRouter)
+app.use(('/secundario'), secundarioRouter)
 
-/////// CONEXION A BASE DE DATOS
+// Rutas de prueba para el servidor
+app.get('/comida', (req,res)=>res.send('Bienvenido a la página de Osito Style SECCION COMIDA'))
+app.get('/ventas', (req,res)=>res.send('Bienvenido a la página de Osito Style SECCION VENTAS'))
 
-const resLocal = { 
-    connectionString : process.env.DATABASE_URL,
-    ssl: true
-    } //PARA TRABAJAR DE MANERA LOCAL: REQUIERE SSL EN TRUE
+// Simula el acceso a una ruta 
+app.get('/alterno', (req,res)=> res.send(subInicio))
+app.get('/alterno/ventas', (req,res)=> res.send(subVentas))
+app.get('/alterno/about', (req,res)=> res.send(subAbout))
 
-const resServer = {
-    connectionString : process.env.DATABASE_URL,
-    }//PARA SUBIR A RENDER: NO DEBE LLEVAR SSL
-
-let respuestaJSON = resLocal
-
-if (!(process.env.ENVIRONTMENT === 'development')){
-    respuestaJSON = resServer
-    console.log('Estamos en produccion')
-} else{    
-    console.log('Estamos en desarrollo')
-}
-
-const pool = new pg.Pool(respuestaJSON) // tengo k pegarle dentro la respuesta
-
-
-
-
-/////// RUTAS
-
+// confirmación de conexión a la base de datos
 app.get('/ping', async (req,res)=>{
     const resul = await pool.query('SELECT NOW()')
     return res.json(resul.rows[0])
 })
 
-app.get('/', (req,res)=>{
-    res.send('Bienvenido a la página de Osito Style')
-})
+
+
+// FINAL ------------------------------------------------------
 
 app.listen(PORT, () => {
     console.log('Server on port', PORT)
 }) 
+
+export const indexDir = __dirname
