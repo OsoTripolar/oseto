@@ -1,11 +1,11 @@
 import express from 'express';
 import path from 'path';
-import { indexDir } from '../index.js';
+import { indexDirGlobal } from '../index.js';
 
 const router = express.Router();
 
 router.get('/', (req,res)=>{
-    res.sendFile(path.join(indexDir, 'public', 'secundario', 'index.html'))
+    res.sendFile(path.join(indexDirGlobal, 'public', 'secundario', 'index.html'))
 })
 
 export default router;
