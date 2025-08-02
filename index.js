@@ -4,6 +4,7 @@ import path from 'path';
 import {fileURLToPath} from 'url'; 
 import {config} from 'dotenv'; //para trabajar con variables de entorno
 import cors from 'cors'; //para permitirme el acceso desde produccioón
+import ejs from 'ejs' // EJSSS
 
 import { subInicio, subVentas, subAbout } from './models/dataTest.js'; //mensajes de testeo de x ruta
 
@@ -23,6 +24,9 @@ const PORT =  process.env.PORT || 3000 // puerto por defecto
 
 const app = express ()
 
+app.set('view engine', "ejs") /// EJSSS
+app.set('views', "./views") /// EJSSS
+
 app.use(cors()); // Middlewhere Global, acepta peticiones desde cualquier dominio
 app.use(express.json()); // pa que nos lean los JSON
 
@@ -30,12 +34,14 @@ config(); //nos permite trabajar con variables de entorno
 
 /////// RUTAS ---------------------------------------
 
-// Provisional
+// Provisional EJSS
 
-app.post('/',(req, res) =>{
-    console.log ('Datos recibidos del frontend: ', req,body);
-    res.json({ estado: 'OK', recibido: req.body})
+app.get('/ejs', (req,res) =>{
+    res.render("index")
+    // res.send("no carga chamo")
 })
+
+
 
 // Ruta para el favicon
 app.get('/favicon.ico', (req, res) => {
