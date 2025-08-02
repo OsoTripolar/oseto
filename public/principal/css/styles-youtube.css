@@ -1,0 +1,8 @@
+main a{
+    background-color: rgb(102, 0, 0);
+    width: 220px;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    color: white;
+    font-weight: 700
+}

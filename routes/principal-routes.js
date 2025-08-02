@@ -20,6 +20,10 @@ router.get('/styles.css', (req,res)=>{
     res.sendFile(path.join(indexDirGlobal, dirPublic, 'css', 'styles.css'))
 })
 
+router.get('/styles-youtube.css', (req,res)=>{
+    res.sendFile(path.join(indexDirGlobal, dirPublic, 'css', 'styles-youtube.css'))
+})
+
 router.get('/wake.js', (req,res)=>{
     res.sendFile(path.join(indexDirGlobal, dirPublic, 'js','wake.js'))
 })
@@ -40,6 +44,10 @@ router.get('/about', (req,res)=>{
 
 router.get('/user', (req,res)=>{
     res.render(path.join(indexDirGlobal, dirViews, 'user.ejs'))
+})
+
+router.get('/youtube', (req,res)=>{
+    res.render(path.join(indexDirGlobal, dirViews, 'youtube.ejs'))
 })
 
 // 404 GENERAL
