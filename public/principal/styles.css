@@ -81,7 +81,7 @@ footer img {
 
 @media(max-width: 600px){
     body{
-        border: 2px solid greenyellow;
+        max-height: 100vh;
     }
 
     nav{
@@ -93,8 +93,20 @@ footer img {
         margin-top: 20px;
     }
 
+    nav ul{
+        padding: 0;
+    }
+
+    nav ul a{
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
     main h1{
-        margin: 10px 30px;
-        /* text-align: center; */
+        margin: 10px 0px;
+    }
+
+    main ul{
+        padding: 0px 17px;
     }
 }
