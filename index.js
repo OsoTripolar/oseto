@@ -25,6 +25,18 @@ const app = express ()
 
 app.use(cors());
 
+const whiteList = ['http://localhost:3000'] 
+const corsOption = {
+    origin: function(origin,callback){
+        if(whiteList.indexOf(origin) !== -1){
+            callback(null, true)
+        } else{ 
+            callback(new Error('Not allowed by CORS'))
+        }
+    }
+
+}
+
 config(); //nos permite trabajar con variables de entorno
 
 
