@@ -3,7 +3,7 @@ import pool from './models/pool.js'; //conexión a db
 import path from 'path';
 import {fileURLToPath} from 'url'; 
 import {config} from 'dotenv'; //para trabajar con variables de entorno
-import {cors} from 'cors'; //para permitirme el acceso desde produccioón
+import cors from 'cors'; //para permitirme el acceso desde produccioón
 
 import { subInicio, subVentas, subAbout } from './models/dataTest.js'; //mensajes de testeo de x ruta
 
