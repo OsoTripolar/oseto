@@ -7,21 +7,11 @@
     <title>Oseto: About</title>
 </head>
 <body>
-    <nav>
-        <a href="/"><img src="/logo-lateral-oscuro.svg" alt="logo"></a>  
-        <ul>
-            <li><a href="/">Inicio</a>
-            <li><a href="/futuras-tareas">Futuras Tareas</a>
-            <li><a href="/about">About</a>
-        </ul>
-    </nav>
+    <%- include('./partials/partial-nav-all.ejs') %>
     <main>
         <h1> About</h1>
         <p> Página personal con el fin de impulsar mi aprendizaje mostrando mis proyectos, avances y servicios al alcance de la vista de todos</p>
     </main>
-    <footer>
-        <p>Aquí debería ir un footer</p>
-        <a href="/user"><img src="/logo-isotipo-claro.svg" alt="logo"></a>
-    </footer>
+    <%- include('./partials/partial-footer-user.ejs') %>
 </body>
 </html>

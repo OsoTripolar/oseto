@@ -4,18 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css">
+
     <title>Oseto: user</title>
+
 </head>
+
+
 <body>
-    <nav>
-        <a href="/"><img src="/logo-lateral-oscuro.svg" alt="logo"></a>        
-        <ul>
-            <li><a href="/">Inicio</a>
-            <li><a href="/futuras-tareas">Futuras Tareas</a>
-            <li><a href="/about">About</a>
-            <li><a href="/ping">isAlive</a>
-        </ul>
-    </nav>
+    <%- include('./partials/partial-nav-user.ejs') %>
     <main>
         <h1> Acá está pendiente desarrollar un login</h1>
         <p> Van a ir varias secciones</p>
@@ -46,10 +42,7 @@
 
         <a href="/">Volver al inicio</a>
     </main>
+    <%- include('./partials/partial-footer-user.ejs') %>
     <script src="/wake.js"></script>
-    <footer>
-        <p>Aquí debería ir un footer</p>
-        <a href="/user"><img src="/logo-isotipo-claro.svg" alt="logo"></a>
-    </footer>
 </body>
 </html>

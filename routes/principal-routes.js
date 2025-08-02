@@ -9,7 +9,7 @@ const dirMiddle = path.join(dir1, dir2);
 const router = express.Router();
 
 router.get('/', (req,res)=>{
-    res.sendFile(path.join(indexDirGlobal, dirMiddle, 'index.html'))
+    res.render(path.join(indexDirGlobal, dirMiddle, 'index.ejs'))
 })
 
 router.get('/styles.css', (req,res)=>{
@@ -21,19 +21,19 @@ router.get('/wake.js', (req,res)=>{
 })
 
 router.get('/futuras-tareas', (req,res)=>{
-    res.sendFile(path.join(indexDirGlobal, dirMiddle, 'futuras-tareas.html'))
+    res.render(path.join(indexDirGlobal, dirMiddle, 'futuras-tareas.ejs'))
 })
 
 router.get('/about', (req,res)=>{
-    res.sendFile(path.join(indexDirGlobal, dirMiddle, 'about.html'))
+    res.render(path.join(indexDirGlobal, dirMiddle, 'about.ejs'))
 })
 
 router.get('/user', (req,res)=>{
-    res.sendFile(path.join(indexDirGlobal, dirMiddle, 'user.html'))
+    res.render(path.join(indexDirGlobal, dirMiddle, 'user.ejs'))
 })
 
 router.use((req,res)=>{
-    res.status(404).sendFile(path.join(indexDirGlobal, dirMiddle, '404.html'))
+    res.status(404).render(path.join(indexDirGlobal, dirMiddle, '404.ejs'))
 })
 
 export default router;
