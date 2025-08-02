@@ -4,8 +4,9 @@ import { indexDirGlobal } from '../index.js';
 
 const dir1 = 'public'
 const dir2 = 'principal'
-const dir3 = 'img-placeholder'
+const dir3 = 'img'
 const dirMiddle = path.join(dir1, dir2, dir3);
+
 
 const router = express.Router();
 

@@ -4,12 +4,11 @@ import path from 'path';
 import {fileURLToPath} from 'url'; 
 import {config} from 'dotenv'; //para trabajar con variables de entorno
 import cors from 'cors'; //para permitirme el acceso desde produccioón
-import ejs from 'ejs' // EJSSS
 
 import { subInicio, subVentas, subAbout } from './models/dataTest.js'; //mensajes de testeo de x ruta
 
 import principalRouter from './routes/principal-routes.js';
-import principalImgPlaceHolderRouter from './routes/principal-img-placeholder.js';
+import publicPrincipalRouter from './routes/principal-public-routes.js';
 import secundarioRouter from './routes/secundario-routes.js';
 
 /////// INICIO ---------------------------------------
@@ -24,23 +23,24 @@ const PORT =  process.env.PORT || 3000 // puerto por defecto
 
 const app = express ()
 
-app.set('view engine', "ejs") /// EJSSS
-app.set('views', "./views") /// EJSSS
+app.set('view engine', "ejs") /// EJS: permite utilizar este tipo de archivos
+app.set('views', "./views") /// EJS: define la ruta pero no entiendo bien
 
 app.use(cors()); // Middlewhere Global, acepta peticiones desde cualquier dominio
 app.use(express.json()); // pa que nos lean los JSON
 
 config(); //nos permite trabajar con variables de entorno
 
+
+
 /////// RUTAS ---------------------------------------
 
 // Provisional EJSS
 
-app.get('/ejs', (req,res) =>{
-    res.render("index")
-    // res.send("no carga chamo")
-})
-
+// app.get('/ejs', (req,res) =>{
+//     res.render("index")
+//     // res.send("no carga chamo")
+// })
 
 
 // Ruta para el favicon
@@ -63,12 +63,13 @@ app.get('/ping', async (req,res)=>{
     return res.json(resul.rows[0])
 })
 
-// RUTAS DE PÁGINAS WEB EN PRODUCCIÓN
 
+
+// RUTAS DE PÁGINAS WEB EN PRODUCCIÓN
 app.use(('/secundario'), secundarioRouter) // para tester la ruta secundaria
 
 // Rutas generales
-app.use(('/'), principalImgPlaceHolderRouter) // Rutas para las imágenes de placeholder del principal
+app.use(('/'), publicPrincipalRouter) // Archivos estáticos generales como imágenes, css, fucniones js
 app.use(('/'), principalRouter) //Creo que esto debería ir al final, pero no estoy seguro
 
 

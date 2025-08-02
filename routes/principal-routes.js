@@ -2,38 +2,50 @@ import express from 'express';
 import path from 'path';
 import { indexDirGlobal } from '../index.js';
 
-const dir1 = 'public'
-const dir2 = 'principal'
-const dirMiddle = path.join(dir1, dir2);
+
+
+//dir 1 : views
+const dirViews = 'views'
+
+//dir 2 : public
+const dirAux1 = 'public'
+const dirAux2 = 'principal'
+const dirPublic = path.join(dirAux1, dirAux2);
 
 const router = express.Router();
 
-router.get('/', (req,res)=>{
-    res.render(path.join(indexDirGlobal, dirMiddle, 'index.ejs'))
-})
+// STATICS
 
 router.get('/styles.css', (req,res)=>{
-    res.sendFile(path.join(indexDirGlobal, dirMiddle, 'styles.css'))
+    res.sendFile(path.join(indexDirGlobal, dirPublic, 'css', 'styles.css'))
 })
 
 router.get('/wake.js', (req,res)=>{
-    res.sendFile(path.join(indexDirGlobal, dirMiddle, 'wake.js'))
+    res.sendFile(path.join(indexDirGlobal, dirPublic, 'js','wake.js'))
+})
+
+// EJS
+
+router.get('/', (req,res)=>{
+    res.render(path.join(indexDirGlobal, dirViews, 'index.ejs'))
 })
 
 router.get('/futuras-tareas', (req,res)=>{
-    res.render(path.join(indexDirGlobal, dirMiddle, 'futuras-tareas.ejs'))
+    res.render(path.join(indexDirGlobal, dirViews, 'futuras-tareas.ejs'))
 })
 
 router.get('/about', (req,res)=>{
-    res.render(path.join(indexDirGlobal, dirMiddle, 'about.ejs'))
+    res.render(path.join(indexDirGlobal, dirViews, 'about.ejs'))
 })
 
 router.get('/user', (req,res)=>{
-    res.render(path.join(indexDirGlobal, dirMiddle, 'user.ejs'))
+    res.render(path.join(indexDirGlobal, dirViews, 'user.ejs'))
 })
 
+// 404 GENERAL
+
 router.use((req,res)=>{
-    res.status(404).render(path.join(indexDirGlobal, dirMiddle, '404.ejs'))
+    res.status(404).render(path.join(indexDirGlobal, dirViews, '404.ejs'))
 })
 
 export default router;
