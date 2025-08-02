@@ -24,6 +24,7 @@ const PORT =  process.env.PORT || 3000 // puerto por defecto
 const app = express ()
 
 app.use(cors());
+app.use(express.json()); // pa que nos lean los JSON
 
 const whiteList = ['http://localhost:3000'] 
 const corsOption = {
@@ -42,6 +43,13 @@ config(); //nos permite trabajar con variables de entorno
 
 
 /////// RUTAS ---------------------------------------
+
+// Provisional
+
+app.post('/',(req, res) =>{
+    console.log ('Datos recibidos del frontend: ', req,body);
+    res.json({ estado: 'OK', recibido: req.body})
+})
 
 // Ruta para el favicon
 app.get('/favicon.ico', (req, res) => {
