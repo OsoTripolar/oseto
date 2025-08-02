@@ -69,8 +69,11 @@ app.get('/ping', async (req,res)=>{
     return res.json(resul.rows[0])
 })
 
-app.use(('/'), principalRouter)
+
+
+
 app.use(('/secundario'), secundarioRouter)
+app.use(('/'), principalRouter) //Creo que esto debería ir al final, pero no estoy seguro
 
 // FINAL ------------------------------------------------------
 
