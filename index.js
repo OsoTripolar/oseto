@@ -7,6 +7,7 @@ import {config} from 'dotenv'; //para trabajar con variables de entorno
 import { subInicio, subVentas, subAbout } from './models/dataTest.js'; //mensajes de testeo de x ruta
 
 import principalRouter from './routes/principal-routes.js';
+import principalImgPlaceHolderRouter from './routes/principal-img-placeholder.js';
 import secundarioRouter from './routes/secundario-routes.js';
 
 /////// INICIO ---------------------------------------
@@ -31,29 +32,6 @@ app.get('/favicon.ico', (req, res) => {
     res.sendFile(path.join(indexDir, 'public', 'principal', 'img-placeholder', 'logo-isotipo-claro.svg'))
 })
 
-
-
-// mucha webada p xd
-app.get('/logo-isotipo-claro.svg', (req, res) => {
-    res.sendFile(path.join(indexDir, 'public', 'principal', 'img-placeholder', 'logo-isotipo-claro.svg'))
-}) 
-
-app.get('/logo-isotipo-oscuro.svg', (req, res) => {
-    res.sendFile(path.join(indexDir, 'public', 'principal', 'img-placeholder', 'logo-isotipo-oscuro.svg'))
-}) 
-
-app.get('/logo-lateral-oscuro.svg', (req, res) => {
-    res.sendFile(path.join(indexDir, 'public', 'principal', 'img-placeholder', 'logo-lateral-oscuro.svg'))
-}) 
-
-app.get('/logo-normal-claro.svg', (req, res) => {
-    res.sendFile(path.join(indexDir, 'public', 'principal', 'img-placeholder', 'logo-normal-claro.svg'))
-}) 
-
-app.get('/logo-normal-oscuro.svg', (req, res) => {
-    res.sendFile(path.join(indexDir, 'public', 'principal', 'img-placeholder', 'logo-normal-oscuro.svg'))
-}) 
-
 // Rutas de prueba para el servidor
 app.get('/comida', (req,res)=>res.send('Bienvenido a la página de Osito Style SECCION COMIDA'))
 app.get('/ventas', (req,res)=>res.send('Bienvenido a la página de Osito Style SECCION VENTAS'))
@@ -69,11 +47,15 @@ app.get('/ping', async (req,res)=>{
     return res.json(resul.rows[0])
 })
 
+// RUTAS DE PÁGINAS WEB EN PRODUCCIÓN
 
+app.use(('/secundario'), secundarioRouter) // para tester la ruta secundaria
 
-
-app.use(('/secundario'), secundarioRouter)
+// Rutas generales
+app.use(('/'), principalImgPlaceHolderRouter) // Rutas para las imágenes de placeholder del principal
 app.use(('/'), principalRouter) //Creo que esto debería ir al final, pero no estoy seguro
+
+
 
 // FINAL ------------------------------------------------------
 
