@@ -6,7 +6,7 @@ import {config} from 'dotenv';
 
 import { subInicio, subVentas, subAbout } from './models/dataTest.js'; //mensajes de testeo de x ruta
 
-import userRouter from './routes/principal-routes.js';
+import principalRouter from './routes/principal-routes.js';
 import secundarioRouter from './routes/secundario-routes.js';
 
 /////// INICIO ---------------------------------------
@@ -23,8 +23,6 @@ config(); //nos permite trabajar con variables de entorno
 
 /////// RUTAS ---------------------------------------
 
-app.use(('/'), userRouter)
-app.use(('/secundario'), secundarioRouter)
 
 // Rutas de prueba para el servidor
 app.get('/comida', (req,res)=>res.send('Bienvenido a la página de Osito Style SECCION COMIDA'))
@@ -41,7 +39,8 @@ app.get('/ping', async (req,res)=>{
     return res.json(resul.rows[0])
 })
 
-
+app.use(('/'), principalRouter)
+app.use(('/secundario'), secundarioRouter)
 
 // FINAL ------------------------------------------------------
 
