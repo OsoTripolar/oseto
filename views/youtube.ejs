@@ -4,18 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles-user.css">
     <link rel="stylesheet" href="/styles-youtube.css">
     <title>Oseto</title>
 </head>
 <body>
-<%- include('./partials/partial-nav-user.ejs') %>
+    <%- include('./partials/partial-nav-all.ejs') %>
+    <%- include('./partials/partial-nav-user.ejs') %>
     <main>
-        <ul>
-            <li><a target="_blank" href="https://www.youtube.com/watch?v=co73jXupP2M">Yarita Corazón Serrano</a></li>
-            <li><a target="_blank" href="https://youtu.be/38Uv2HN9nlQ?si=iKKyolnJti9wtl_i">Tropical Andina </a></li>
-            <li><a target="_blank" href="https://youtu.be/15iEJ0qY_70?si=MKDrmOQYjzzbI88D">Papasito</a></li>
-        </ul>
+        <div class="container main">
+            <h2>Youtube - Repertorio</h2>
+            <p>Haz click para ir al enlace de Youtube de la canción</p>
+            <ul>
+                <li>Verde: me sale bien</li>
+                <li>Naranja: me sale masomenos</li>
+                <li>Rojo: me sale mal</li>
+            </ul>
+            <ul class="yt">
+                <!-- Los que están con yt__ok son canciones que me salen bien -->
+                <li class="yt__li"><a class="yt__a" target="_blank" href="https://www.youtube.com/watch?v=co73jXupP2M">
+                    Yarita Corazón Serrano</a></li>
+                <li class="yt__li"><a class="yt__a" target="_blank" href="https://youtu.be/38Uv2HN9nlQ?si=iKKyolnJti9wtl_i">
+                    Tropical Andina </a></li>
+                <li class="yt__li"><a class="yt__a" target="_blank" href="https://youtu.be/15iEJ0qY_70?si=MKDrmOQYjzzbI88D">
+                    Papasito</a></li>
+                <li class="yt__li yt__li--meh"><a class="yt__a" target="_blank" href="https://www.youtube.com/watch?v=MD9xt1KCoDc">
+                    Caballo Viejo</a></li>
+                <li class="yt__li yt__li--ok"><a class="yt__a" target="_blank" href="https://www.youtube.com/watch?v=iz0pcf0EJ88">
+                    Mix Pintura Roja</a></li>
+            </ul>
+        </div>
     </main>
-<%- include('./partials/partial-footer-all.ejs') %>
+<%- include('./partials/partial-footer.ejs') %>
 </body>
 </html>

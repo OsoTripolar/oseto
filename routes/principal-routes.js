@@ -24,6 +24,10 @@ router.get('/styles-youtube.css', (req,res)=>{
     res.sendFile(path.join(indexDirGlobal, dirPublic, 'css', 'styles-youtube.css'))
 })
 
+router.get('/styles-user.css', (req,res)=>{
+    res.sendFile(path.join(indexDirGlobal, dirPublic, 'css', 'styles-user.css'))
+})
+
 router.get('/wake.js', (req,res)=>{
     res.sendFile(path.join(indexDirGlobal, dirPublic, 'js','wake.js'))
 })

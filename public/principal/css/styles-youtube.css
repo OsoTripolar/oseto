@@ -1,8 +1,51 @@
-main a{
-    background-color: rgb(102, 0, 0);
+/* .main a{
+    background-color: rgb(188, 188, 188);
     width: 220px;
     margin-bottom: 5px;
     border-radius: 6px;
+    color: black;
+    
+}
+
+.youtube--urg{
+    background-color: rgb(214, 76, 76);
+} */
+
+/* .youtube--links{
+    background-color: rgb(214, 76, 76);
+} */
+
+.yt{
+    padding: 0;
+    list-style-type: none;
+}
+
+.yt__li{
+    height: 35px;
+    width: fit-content;
+    padding: 0 8px;
+    margin: 0 0 8px 0;
+    display: flex;
+    align-items: center;
     color: white;
+
+    border-radius: 10px;
+    background-color: rgb(147, 12, 12);
+}
+
+.yt__li--ok{
+    text-decoration: none;
+    font-weight: 700;
+    background-color: green;
+}
+
+.yt__li--meh{
+    text-decoration: none;
+    font-weight: 700;
+    background-color: rgb(208, 153, 24);
+}
+
+.yt__a{
+    text-decoration: none;
     font-weight: 700
 }

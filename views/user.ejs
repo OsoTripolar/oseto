@@ -4,45 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css">
-
+    <link rel="stylesheet" href="/styles-user.css">
     <title>Oseto: user</title>
 
 </head>
 
 
 <body>
+    <%- include('./partials/partial-nav-all.ejs') %>
     <%- include('./partials/partial-nav-user.ejs') %>
     <main>
-        <h1> Acá está pendiente desarrollar un login</h1>
-        <p> Van a ir varias secciones</p>
-        <h2> Pendientes a desarrollar</h2>
-        <ul>
-            <li>Función para que el servidor esté alerta: 30min - 1h - 2h</li>
-            <li>Tabla de administración general para tablas y datos</li>
-            <li>Cambiar de color según si estamos en local o en la web</li>
-            <li>Agregar función para ir desde el local hacia la web en otra página</li>
-            <li>Hacer responsivo el sitio</li>
-            <li>Funcion para revisar el número de visitas</li>
-            <li>Agregar módulos dinámicos con EJS</li>
-            <li>Por aprender para mejorar</li>
-            <li>Poner algún tipo de contraseña a este sitio</li>
-        </ul>
-        <h3>[Sección] => [Interfaz para controlar el tiempo de escucha del servidor]</h3>
-
-        <h2>Por aprender para mejorar</h2>
-        <ul>
-            <li>Postgres: creacion - creacion de tablas - insersion de datos</li>
-            <li>EJS</li>
-            <li>JS: Async - Await</li>
-            <li>JS: Promesas</li>
-            <li>JS: Callbacks</li>
-            <li>JS: .finally</li>
-            <li>http: cors</li>
-        </ul>
-
-        <a href="/">Volver al inicio</a>
+        <div class="container main">
+            <h1> Acá está pendiente desarrollar un login</h1>
+            <p> Van a ir varias secciones</p>
+            <h2> Pendientes a desarrollar</h2>
+            <ul>
+                <li>Hacer una guía pública dónde pueda gestionar y subir notas rápidas de desarrollo, cómo también links, comentarios, lo que sea, puede ser pública visualizandola, </li>
+                <li>Función para que el servidor esté alerta: 30min - 1h - 2h</li>
+                <li>Tabla de administración general para tablas y datos</li>
+                <li>Cambiar de color según si estamos en local o en la web</li>
+                <li>Agregar función para ir desde el local hacia la web en otra página</li>
+                <li>Hacer responsivo el sitio</li>
+                <li>Funcion para revisar el número de visitas</li>
+                <li>Agregar módulos dinámicos con EJS</li>
+                <li>Por aprender para mejorar</li>
+                <li>Poner algún tipo de contraseña a este sitio</li>
+            </ul>
+            <h3>[Sección] => [Interfaz para controlar el tiempo de escucha del servidor]</h3>
+            
+            <h2>Por aprender para mejorar</h2>
+            <ul>
+                <li>Postgres: creacion - creacion de tablas - insersion de datos</li>
+                <li>EJS: tiene mucho potencial</li>
+                <li>JS: Async - Await</li>
+                <li>JS: Promesas</li>
+                <li>JS: Callbacks</li>
+                <li>JS: .finally</li>
+                <li>http: cors</li>
+            </ul>
+            
+            <button onclick="window.location.href='/'">Volver al inicio</button>
+        </div>
     </main>
-    <%- include('./partials/partial-footer-user.ejs') %>
+    <%- include('./partials/partial-footer.ejs') %>
     <script src="/wake.js"></script>
-</body>
+    </body>
 </html>
