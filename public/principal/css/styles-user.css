@@ -1,4 +1,14 @@
-.nav--user {
+.user-nav{
     background-color: rgb(88, 88, 88);
     height: 30px;
+}
+
+
+@media(max-width: 600px){
+
+    .nav--user{
+        flex-direction: row ;
+    }
+
+
 }
