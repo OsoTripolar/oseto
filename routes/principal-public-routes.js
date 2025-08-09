@@ -10,6 +10,10 @@ const dirMiddle = path.join(dir1, dir2, dir3);
 
 const router = express.Router();
 
+router.get('/favicon.ico', (req, res) => {
+    res.sendFile(path.join(indexDirGlobal, dirMiddle, 'logo-isotipo-claro.svg'))
+})
+
 router.get('/logo-isotipo-claro.svg', (req, res) => {
     res.sendFile(path.join(indexDirGlobal, dirMiddle, 'logo-isotipo-claro.svg'))
 }) 

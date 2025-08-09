@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/secundario/styles-secundary.css">
+    <title>Esta es mi página secundaria pe</title>
+</head>
+<body>
+
+    <%- include('../../views/partials/partial-nav-all.ejs') %>
+
+    <main>
+        <div class="container">
+            <h1>Esta es mi página secundaria, está escondida de la página principal</h1>
+            <p>Es inaccesible a menos que sepas la URL</p>
+
+            
+        <div >
+
+            <h2>Tasklist </h2>
+            <p>Probamos con supabase una tasklist persistente</p>
+
+            <div class="tasklist__container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>N°</th>
+                            <th>Tarea</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td>Carlos</td>
+                            <td>Torres Paredes</td>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>Carlos</td>
+                            <td>Torres Paredes</td>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>Carlos</td>
+                            <td>Torres Paredes</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+
+        </div>
+    </main>
+
+    <%- include('../../views/partials/partial-footer.ejs') %>
+
+    <script src="/secundario/app.js"></script>
+    
+</body>
+</html>

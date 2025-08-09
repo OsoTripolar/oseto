@@ -16,10 +16,13 @@ let respuestaJSON = resLocal
 
 if (!(process.env.ENVIRONTMENT === 'development')){
     respuestaJSON = resServer
-    console.log('Estamos en produccion')
-} else{    
-    console.log('Estamos en desarrollo')
-}
+    // console.log('Estamos en produccion')
+} 
+
+// else{    
+//     console.log('Estamos en desarrollo')
+// }
 
 const pool = new pg.Pool(respuestaJSON) // tengo k pegarle dentro la respuesta
+
 export default pool

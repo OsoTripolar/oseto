@@ -1,0 +1,39 @@
+.tasklist__container{
+    border: 1px solid black;
+    /* background-color: red; */
+    flex: 0 0 auto;
+    width: fit-content;
+}
+
+
+table{
+    /* font-size: 14px; */
+    table-layout: fixed;
+    border-collapse: collapse;
+    /* color: #fff; */
+}
+
+thead{
+    background-color: black;
+    color: white;
+}
+
+th{
+    padding: 20px 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+td{
+    padding: 15px;
+    border-bottom: solid 1px black
+}
+
+tbody > tr:last-child > td {
+    border-bottom: none;
+}
+
+tbody tr:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+}

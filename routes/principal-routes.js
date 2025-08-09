@@ -2,8 +2,6 @@ import express from 'express';
 import path from 'path';
 import { indexDirGlobal } from '../index.js';
 
-
-
 //dir 1 : views
 const dirViews = 'views'
 
@@ -52,6 +50,12 @@ router.get('/user', (req,res)=>{
 
 router.get('/youtube', (req,res)=>{
     res.render(path.join(indexDirGlobal, dirViews, 'youtube.ejs'))
+})
+
+// confirmación de conexión a la base de datos :MOVER A MODELS
+router.get('/ping', async (req,res)=>{
+    const resul = await pool.query('SELECT NOW()')
+    return res.json(resul.rows[0])
 })
 
 // 404 GENERAL
