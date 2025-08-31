@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { indexDirGlobal } from '../index.js';
+import pool from '../models/pool.js'
 
 //dir 1 : views
 const dirViews = 'views'
@@ -26,8 +27,12 @@ router.get('/styles-user.css', (req,res)=>{
     res.sendFile(path.join(indexDirGlobal, dirPublic, 'css', 'styles-user.css'))
 })
 
-router.get('/wake.js', (req,res)=>{
-    res.sendFile(path.join(indexDirGlobal, dirPublic, 'js','wake.js'))
+router.get('/wakeServer.js', (req,res)=>{
+    res.sendFile(path.join(indexDirGlobal, dirPublic, 'js','wakeServer.js'))
+})
+
+router.get('/agenda.js', (req,res)=>{
+    res.sendFile(path.join(indexDirGlobal, dirPublic, 'js','agenda.js'))
 })
 
 // EJS
@@ -50,6 +55,10 @@ router.get('/user', (req,res)=>{
 
 router.get('/youtube', (req,res)=>{
     res.render(path.join(indexDirGlobal, dirViews, 'youtube.ejs'))
+})
+
+router.get('/agenda', (req,res)=>{
+    res.render(path.join(indexDirGlobal, dirViews, 'agenda.ejs'))
 })
 
 // confirmación de conexión a la base de datos :MOVER A MODELS

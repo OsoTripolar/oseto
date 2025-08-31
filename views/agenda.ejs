@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles-user.css">
+    <link rel="stylesheet" href="/styles-youtube.css">
+    <title>Oseto: Agenda</title>
+</head>
+<body>
+    <%- include('./partials/partial-nav-all.ejs') %>
+    <%- include('./partials/partial-nav-user.ejs') %>
+    <main>
+        <div class="container main">
+            <h1>Futuras Actividades</h1>
+
+            <div class="form">
+                <input id="inputText" type="text">
+                <input id="inputDate" type="date" min="2025-08-31">
+                <button id="addDate">Añadir Fecha</button>
+            </div>
+
+            <div class="tabla">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Description</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody class="rows">
+                        <tr>
+                            <td class="td-id">0</td>
+                            <td class="td-description">Apocalipsis Mundial</td>
+                            <td class="td-fecha">2012-12-12</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="content">
+
+            </div>
+
+
+        </div>
+    </main>
+
+    <template>
+        <tr>
+            <td class="td-id">0</td>
+            <td class="td-description">Apocalipsis Mundial</td>
+            <td class="td-fecha">2012-12-12</td>
+        </tr>
+    </template>
+
+    <script src="/agenda.js"></script>
+<%- include('./partials/partial-footer.ejs') %>
+</body>
+</html>
