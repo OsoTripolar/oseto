@@ -7,7 +7,6 @@ import cors from 'cors'; //para permitirme el acceso desde produccioón
 
 import principalRouter from './routes/principal-routes.js';
 import publicPrincipalRouter from './routes/principal-public-routes.js';
-import secundarioRouter from './routes/secundario-routes.js';
 
 
 /////// INICIO ---------------------------------------
@@ -32,9 +31,6 @@ config(); //nos permite trabajar con variables de entorno
 
 /////// RUTAS ---------------------------------------
 
-
-// RUTAS DE PÁGINAS WEB EN PRODUCCIÓN
-app.use(('/secundario'), secundarioRouter) // para tester la ruta secundaria
 
 // Rutas generales
 app.use(('/'), publicPrincipalRouter) // Archivos estáticos generales como imágenes, css, fucniones js

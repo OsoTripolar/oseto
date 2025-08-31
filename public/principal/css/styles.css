@@ -155,11 +155,9 @@ footer{
 /* ESPECIFICOS ------------------------ */
 
 .list-container{
-    /* background-color: rgb(209, 209, 255); */
     width: 1000px;
     display: flex;    
     flex-direction: column;
-    /* width: fit-content; */
 }
 
 .list-title{
@@ -208,6 +206,7 @@ td{
 .th-first{
     border-right: 1px solid black;
     width: 200px;
+    text-align: center;
 }
 
 .td-second,
@@ -224,7 +223,7 @@ tbody tr:hover{
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.1);
 
-
+}
 
 
 
@@ -238,22 +237,55 @@ tbody tr:hover{
     
 /* RESPONSIVE ------------------------------------------*/
     
-    @media(max-width: 600px){
-        body{
-            max-height: 100vh;
-        }
-    
-        .container{
-            width: 85%;
-        }
-    
-        .nav{
-            flex-direction: column ;
-        }
-    
-        .nav__img{
-            margin-top: 15px;
-        }
-    
+@media(max-width: 600px){
+
+    /* ESTILOS GENERALES */
+    body{
+        max-height: 100vh;
     }
+
+    .container{
+        width: 90%;
+    }
+
+    .nav{
+        flex-direction: column ;
+    }
+
+    .nav__img{
+        margin-top: 15px;
+    }
+
+    /* EXTRAS */
+    
+    .list-container{
+        width: auto;
+    }
+
+    .list-form{
+        flex-direction: column;
+    }
+
+    th{
+    padding: 15px 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    }
+
+    td{
+        padding: 10px;
+        border-bottom: solid 1px black
+    }
+
+    .td-first,
+    .th-first{
+        width: 35%;
+    }
+
+    .td-second,
+    .th-second{
+        width: 65%;
+    }
+    
+
 }
