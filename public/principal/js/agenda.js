@@ -2,6 +2,10 @@ const content = document.querySelector('.content')
 const template = document.querySelector('template')
 const rows = document.querySelector('.rows')
 
+const addDateButton = document.getElementById('btnAddDate')
+const inputText = document.getElementById('inputText')
+const inputDate = document.getElementById('inputDate')
+
 // FETCH
 
 const linkPrincipal = 'https://aeiiupwvwjiarexjmsjs.supabase.co/rest/v1/osetoDates'
@@ -21,12 +25,10 @@ fetch(`${linkPrincipal}?select=*`, optionsGet)
         const templateRow = template.content.cloneNode(true)
 
         const tr = templateRow.querySelector('tr')
-        const rowId = templateRow.querySelector('.td-id')
         const rowDescription = templateRow.querySelector('.td-description')
         const rowFecha = templateRow.querySelector('.td-fecha')
         
         tr.setAttribute('data-id',element.id)
-        rowId.textContent = element.id
         rowDescription.textContent = element.description
         rowFecha.textContent = element.fecha
         
@@ -72,13 +74,12 @@ async function borrarDatos(dato){
 // AGREGAR TAREA
 
 
-const addDateButton = document.getElementById('addDate')
-const inputText = document.getElementById('inputText')
-const inputDate = document.getElementById('inputDate')
 
 
 
-addDateButton.addEventListener('click',()=>{
+addDateButton.addEventListener('click',(e)=>{
+
+    e.preventDefault()
 
     if(inputDate.value === '' || inputText.value === '' ){
         console.log("Rellena ambos campos pe papeto")

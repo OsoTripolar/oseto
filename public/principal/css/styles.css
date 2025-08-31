@@ -1,3 +1,5 @@
+/* GENERALES ------------------------------------------ */
+
 *{
     box-sizing: border-box;   
 }
@@ -21,6 +23,10 @@ a {
 
 .container{
     width: 95%;
+}
+
+button{
+    cursor: pointer;
 }
 
 /* NAV */
@@ -83,24 +89,24 @@ main{
     flex: 1; /* muy importante para que el main encaje bien y no desborde */
 }   
 
-main a{
+
+main a{ /* Damos estilos a los enlaces */
     text-decoration: underline;
     color: inherit;
 }
 
 main button{
     height: 23px;
-    width:  120px;
+    min-width:  120px;
     display: block;
 
-    font-size: small;
-    text-decoration: none;
     text-align: center;
 
     background-color: rgb(0, 0, 0);
     color: white;
 
     border: none;
+    border-radius: 5px;
 }    
 
 main ul{
@@ -110,7 +116,6 @@ main ul{
 main li{
     margin-bottom: 4px;
 }
-
 
 
 /* FOOTER */
@@ -140,23 +145,115 @@ footer{
     height: 29px;
 }
 
-/* RESPONSIVE */
 
-@media(max-width: 600px){
-    body{
-        max-height: 100vh;
+
+
+
+
+
+
+/* ESPECIFICOS ------------------------ */
+
+.list-container{
+    /* background-color: rgb(209, 209, 255); */
+    width: 1000px;
+    display: flex;    
+    flex-direction: column;
+    /* width: fit-content; */
+}
+
+.list-title{
+    margin-bottom: 0;
+}
+
+.list-form{
+    display: flex;
+    margin-bottom: 8px;
+    gap: 5px;
+}
+
+.form__input-text{
+    min-width: 50%;
+    flex: 1;
+}
+
+.table__container{
+    border: 1px solid black;
+}
+
+
+table{
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+thead{
+    background-color: black;
+    color: white;
+}
+
+
+th{
+    padding: 20px 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+td{
+    padding: 15px;
+    border-bottom: solid 1px black
+}
+
+.td-first,
+.th-first{
+    border-right: 1px solid black;
+    width: 200px;
+}
+
+.td-second,
+.th-second{
+    width: 800px;
+}
+
+
+tbody > tr:last-child > td { /* Evita la duplicidad de líneas*/
+    border-bottom: none;
+}
+
+tbody tr:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+
+
+
+
+
+
+
+
+
+
+
+
+    
+/* RESPONSIVE ------------------------------------------*/
+    
+    @media(max-width: 600px){
+        body{
+            max-height: 100vh;
+        }
+    
+        .container{
+            width: 85%;
+        }
+    
+        .nav{
+            flex-direction: column ;
+        }
+    
+        .nav__img{
+            margin-top: 15px;
+        }
+    
     }
-
-    .container{
-        width: 85%;
-    }
-
-    .nav{
-        flex-direction: column ;
-    }
-
-    .nav__img{
-        margin-top: 15px;
-    }
-
 }

@@ -11,49 +11,60 @@
 <body>
     <%- include('./partials/partial-nav-all.ejs') %>
     <%- include('./partials/partial-nav-user.ejs') %>
+
+
+
+
     <main>
         <div class="container main">
-            <h1>Futuras Actividades</h1>
 
-            <div class="form">
-                <input id="inputText" type="text">
-                <input id="inputDate" type="date" min="2025-08-31">
-                <button id="addDate">Añadir Fecha</button>
+            <div class="list-container">
+                
+                <h1 class="list-title">Futuras Actividades</h1>
+                <p class="list-description">Tabla recursiva para saber como construir diversas listas</p>
+
+                <!-- FORMULARIO -->
+                <form class="list-form">
+                    <input class="form__input-text" id="inputText" type="text">
+                    <input class="form__input-date" id="inputDate" type="date" min="2025-08-31">
+                    <button class="form__button-sumbmit" id="btnAddDate" type="submit">Añadir Fecha</button>
+                </form>
+                
+                <!-- TABLA -->
+                <div class="table__container">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="th-first">Fecha</th>
+                                <th class="th-second">Descripcion</th>
+                            </tr>
+                        </thead>
+                        <tbody class="rows">
+                        </tbody>
+                    </table>
+
+                </div>
+                
             </div>
-
-            <div class="tabla">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Description</th>
-                            <th>Fecha</th>
-                        </tr>
-                    </thead>
-                    <tbody class="rows">
-                        <tr>
-                            <td class="td-id">0</td>
-                            <td class="td-description">Apocalipsis Mundial</td>
-                            <td class="td-fecha">2012-12-12</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="content">
-
-            </div>
-
 
         </div>
     </main>
 
+
+
+
+
     <template>
         <tr>
-            <td class="td-id">0</td>
-            <td class="td-description">Apocalipsis Mundial</td>
-            <td class="td-fecha">2012-12-12</td>
+            <td class="td-fecha td-first">2012-12-12</td>
+            <td class="td-description td-second">Apocalipsis Mundial</td>
         </tr>
     </template>
+
+
+
+
 
     <script src="/agenda.js"></script>
 <%- include('./partials/partial-footer.ejs') %>
